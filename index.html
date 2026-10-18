@@ -4,7 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="RevIA – AI code review">
-<style>:root{padding:0} body{margin:0;font-size:14px} img{max-width:100%}</style>
+<style>:root{padding:0} body{margin:0;font-size:14px} img{max-width:100%}.cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 6px 0 0; }
+.cta span { color: var(--muted); font-size: 14px; }
+.bouton { display: inline-block; font: 700 16px var(--body); background: var(--accent); color: #fff; padding: 12px 20px; border-radius: 11px; text-decoration: none; }
+.bouton:hover { filter: brightness(1.08); }
+.bouton:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; }
+</style>
 <title>RevIA Demo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -60,6 +65,7 @@ footer { color: var(--muted); font-size: 13px; }
     <div class="marque">Rev<span>IA</span></div>
     <h1>AI code review that stops vulnerabilities before the merge</h1>
     <p class="lead">RevIA reads code like a senior developer: SQL and command injections, hard-coded secrets, bugs and bad practices, each mapped to the OWASP Top 10 with a plain-language explanation and a ready-to-apply fix. It plugs into GitHub Actions and GitLab CI and can run entirely on your own servers.</p>
+    <p class="cta"><a class="bouton" href="app/">Try the live app</a><span>Interactive demo, no sign-up</span></p>
   </header>
 
   <section>
@@ -83,8 +89,7 @@ footer { color: var(--muted); font-size: 13px; }
 
   <section class="offre" aria-labelledby="offre-titre">
     <h2 id="offre-titre">RevIA is available as is</h2>
-    <div class="prix"><span class="net">390 €</span><span>one-off · non-exclusive source-code licence (modify, host, resell under your brand)</span></div>
-    <div class="prix"><span class="net">1 500 €</span><span>one-off · exclusive transfer of all rights, single buyer</span></div>
+    <p>The source code is sold for a one-off payment, either as a non-exclusive licence (modify, host and sell under your brand) or as an exclusive transfer of all rights to a single buyer. Price on request.</p>
     <div class="ecrans">
       <div><h3>Ready</h3><ul>
         <li>AI analysis of Java, Python, JS/TS, PHP, C, C#: OWASP flaws, hard-coded secrets, bugs, fixes</li>
@@ -106,7 +111,7 @@ footer { color: var(--muted); font-size: 13px; }
   </section>
 
   <p class="legende"><a href="fr.html">Version française</a></p>
-  <footer>RevIA is presented by Nafissa Bridah, software and data engineer, 2 years in software QA.</footer>
+  <footer>RevIA is presented by Nafissa Bridah, software and data engineer, currently working in software QA.</footer>
 </div>
 <script>
 document.getElementById('copier').addEventListener('click', () => {

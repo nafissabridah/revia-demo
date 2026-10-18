@@ -4,7 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="RevIA – revue de code par IA">
-<style>:root{padding:0} body{margin:0;font-size:14px} img{max-width:100%}</style>
+<style>:root{padding:0} body{margin:0;font-size:14px} img{max-width:100%}.cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 6px 0 0; }
+.cta span { color: var(--muted); font-size: 14px; }
+.bouton { display: inline-block; font: 700 16px var(--body); background: var(--accent); color: #fff; padding: 12px 20px; border-radius: 11px; text-decoration: none; }
+.bouton:hover { filter: brightness(1.08); }
+.bouton:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; }
+</style>
 <title>RevIA Demo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -58,46 +63,46 @@ footer { color: var(--muted); font-size: 13px; }
 <div class="wrap">
   <header>
     <div class="marque">Rev<span>IA</span></div>
-    <h1>La revue de code par IA qui bloque les failles avant le merge</h1>
-    <p class="lead">RevIA relit le code comme un développeur senior : injections SQL et de commandes, secrets en dur, bugs et mauvaises pratiques, chacun rattaché au Top 10 OWASP avec une explication claire et une correction prête à appliquer. Il s'intègre à GitHub Actions et GitLab CI et peut tourner entièrement sur vos propres serveurs.</p>
+    <h1>La revue de code par IA qui bloque les failles avant la fusion</h1>
+    <p class="lead">RevIA relit le code comme un développeur expérimenté : injections SQL et de commandes, secrets laissés en clair, erreurs de programmation et mauvaises pratiques, chacune rattachée au Top 10 de l'OWASP, avec une explication claire et une correction prête à appliquer. RevIA s'intègre à GitHub Actions et à GitLab CI et peut fonctionner entièrement sur vos propres serveurs.</p>
+    <p class="cta"><a class="bouton" href="app/">Essayer l'application en ligne</a><span>Démonstration interactive, sans inscription</span></p>
   </header>
 
   <section>
     <video controls preload="metadata" poster="poster.jpg" src="RevIA-demo.mp4"></video>
-    <p class="legende">Démo · 1 min 37 · essai sans compte, rapport, correction, tableau de bord, jeton CI et seuil qualité qui bloque une pull request.</p>
+    <p class="legende">Vidéo de 1 min 37 : essai sans compte, rapport d'analyse, correction, tableau de bord, jeton d'intégration continue et seuil de qualité qui bloque une demande de fusion.</p>
   </section>
 
   <section>
     <h2>Écrans</h2>
     <div class="ecrans">
-      <figure><img src="shots/essai.jpg" alt="Trial on the home page: Java code on the left, score 50 and three findings on the right" loading="lazy">
-        <figcaption><b>Essai immédiat.</b> Collez jusqu'à 150 lignes, rien n'est enregistré.</figcaption></figure>
-      <figure><img src="shots/rapport.jpg" alt="Review report with score ring and SARIF export button" loading="lazy">
-        <figcaption><b>Rapport.</b> Score sur 100, problèmes par gravité, export SARIF.</figcaption></figure>
-      <figure><img src="shots/tableau.jpg" alt="Dashboard with average score trend and issues by category" loading="lazy">
+      <figure><img src="shots/essai.jpg" alt="Essai sur la page d'accueil : code Java à gauche, score de 50 et trois problèmes à droite" loading="lazy">
+        <figcaption><b>Essai immédiat.</b> Collez jusqu'à 150 lignes ; rien n'est enregistré.</figcaption></figure>
+      <figure><img src="shots/rapport.jpg" alt="Rapport d'analyse avec le score et le bouton d'export SARIF" loading="lazy">
+        <figcaption><b>Rapport.</b> Score sur 100, problèmes classés par gravité, export au format SARIF.</figcaption></figure>
+      <figure><img src="shots/tableau.jpg" alt="Tableau de bord avec l'évolution du score moyen et les problèmes par catégorie" loading="lazy">
         <figcaption><b>Tableau de bord.</b> Évolution de la qualité et erreurs les plus fréquentes.</figcaption></figure>
-      <figure><img src="shots/ci-token.jpg" alt="Settings page with a newly created CI token" loading="lazy">
-        <figcaption><b>Intégration CI.</b> Un jeton, un fichier de workflow, un seuil qualité sur chaque pull request.</figcaption></figure>
+      <figure><img src="shots/ci-token.jpg" alt="Page des paramètres avec un jeton d'intégration continue tout juste créé" loading="lazy">
+        <figcaption><b>Intégration continue.</b> Un jeton, un fichier de configuration et un seuil de qualité appliqué à chaque demande de fusion.</figcaption></figure>
     </div>
   </section>
 
   <section class="offre" aria-labelledby="offre-titre">
-    <h2 id="offre-titre">RevIA est disponible en l'état</h2>
-    <div class="prix"><span class="net">390 €</span><span>en une fois · licence du code source non exclusive (modification, hébergement, revente sous votre marque)</span></div>
-    <div class="prix"><span class="net">1 500 €</span><span>en une fois · cession exclusive de tous les droits, à un seul acquéreur</span></div>
+    <h2 id="offre-titre">RevIA est proposé en l'état</h2>
+    <p>Le code source est cédé en un paiement unique, soit sous licence non exclusive (modification, hébergement et commercialisation sous votre marque), soit par cession exclusive de l'ensemble des droits à un seul acquéreur. Le tarif vous est communiqué sur simple demande.</p>
     <div class="ecrans">
-      <div><h3>Prêt</h3><ul>
-        <li>Analyse IA de Java, Python, JS/TS, PHP, C, C# : failles OWASP, secrets en dur, bugs, corrections</li>
-        <li>Spring Boot 3, Angular 17, PostgreSQL, comptes, quotas, administration, historique, tableau de bord</li>
-        <li>Seuil qualité GitHub Actions / GitLab CI, export SARIF, tout modèle d'IA ou Ollama local, Docker, documentation</li>
+      <div><h3>Ce qui est prêt</h3><ul>
+        <li>Analyse par IA du Java, du Python, du JavaScript et du TypeScript, du PHP, du C et du C# : failles de l'OWASP, secrets en clair, erreurs, corrections</li>
+        <li>Spring Boot 3, Angular 17 et PostgreSQL : comptes, quotas, administration, historique et tableau de bord</li>
+        <li>Seuil de qualité pour GitHub Actions et GitLab CI, export SARIF, choix du modèle d'IA ou modèle local avec Ollama, Docker et documentation</li>
       </ul></div>
-      <div><h3>Reste à faire par l'acquéreur</h3><ul>
-        <li>Le déploiement (serveur, domaine) et une clé d'IA payante</li>
-        <li>Le paiement en ligne, les conditions de vente, la politique de confidentialité</li>
+      <div><h3>Ce qui reste à la charge de l'acquéreur</h3><ul>
+        <li>La mise en ligne (serveur, nom de domaine) et une clé d'accès à un modèle d'IA</li>
+        <li>Le paiement en ligne, les conditions générales de vente et la politique de confidentialité</li>
         <li>La traduction des écrans de l'application</li>
       </ul></div>
     </div>
-    <p class="legende">Vous recevez le code source complet (dépôt Git et documentation), livré en l'état.</p>
+    <p class="legende">Vous recevez le code source complet, avec le dépôt Git et la documentation, livré en l'état.</p>
   </section>
 
   <section class="contact">
@@ -106,14 +111,14 @@ footer { color: var(--muted); font-size: 13px; }
   </section>
 
   <p class="legende"><a href="index.html">English version</a></p>
-  <footer>RevIA est présenté par Nafissa Bridah, ingénieure en génie logiciel et data, QA logicielle depuis 2 ans.</footer>
+  <footer>RevIA est présenté par Nafissa Bridah, ingénieure en génie logiciel et en données, en assurance qualité logicielle depuis deux ans.</footer>
 </div>
 <script>
 document.getElementById('copier').addEventListener('click', () => {
   const t = document.getElementById('mail').textContent, b = document.getElementById('copier');
-  navigator.clipboard.writeText(t).then(() => { b.textContent = 'Copied'; }, () => {
+  navigator.clipboard.writeText(t).then(() => { b.textContent = 'Adresse copiée'; }, () => {
     const r = document.createRange(); r.selectNodeContents(document.getElementById('mail'));
-    const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected, press Ctrl+C';
+    const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Sélectionnée : appuyez sur Ctrl+C';
   });
 });
 </script>

@@ -1,0 +1,1 @@
+import{Wa as o,X as n}from"./chunk-YMCF3UOC.js";var c=(()=>{class t{constructor(){this.valeur=o(null)}deposer(r,e){this.valeur.set({code:r,langage:e})}prendre(){let r=this.valeur();return this.valeur.set(null),r}static{this.\u0275fac=function(e){return new(e||t)}}static{this.\u0275prov=n({token:t,factory:t.\u0275fac,providedIn:"root"})}}return t})();export{c as a};
