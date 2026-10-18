@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="RevIA – revue de code par IA">
+<style>:root{padding:0} body{margin:0;font-size:14px} img{max-width:100%}</style>
+<title>RevIA Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one narrow column, video first, then four annotated screens and a plain offer block */
+:root {
+  --bg: #f4f4fb; --surface: #ffffff; --fg: #15172e; --muted: #5d6185; --line: #dfe0ee;
+  --accent: #5b5bf6; --accent-soft: #ecebff; --crit: #d6404a;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0b0e1d; --surface: #13172f; --fg: #eceeff; --muted: #a3a8cf; --line: #262b52;
+  --accent: #8b8cff; --accent-soft: #1e2150; --crit: #f07a80; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0b0e1d; --surface: #13172f; --fg: #eceeff; --muted: #a3a8cf; --line: #262b52;
+  --accent: #8b8cff; --accent-soft: #1e2150; --crit: #f07a80; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 16px/1.6 var(--body); }
+.wrap { max-width: 980px; margin: 0 auto; padding-block: 48px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 44px; }
+header { display: grid; gap: 12px; }
+.marque { font: 800 22px var(--display); letter-spacing: -.02em; }
+.marque span { color: var(--accent); }
+h1 { font: 800 clamp(30px, 5vw, 50px)/1.05 var(--display); letter-spacing: -.03em; margin: 0; text-wrap: balance; }
+.lead { color: var(--muted); max-width: 64ch; margin: 0; font-size: 17px; }
+video { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; border-radius: 14px; border: 1px solid var(--line); background: #0b0e1d; display: block; }
+.legende { color: var(--muted); font-size: 13.5px; margin-top: 8px; }
+h2 { font: 700 24px var(--display); margin: 0 0 6px; letter-spacing: -.01em; }
+.ecrans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+figure { margin: 0; display: grid; gap: 8px; min-width: 0; }
+figure img { border-radius: 10px; border: 1px solid var(--line); display: block; width: 100%; }
+figcaption { font-size: 14px; color: var(--muted); }
+figcaption b { color: var(--fg); font-weight: 600; }
+h3 { font: 700 16px var(--display); margin: 0 0 6px; }
+.offre { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px; display: grid; gap: 14px; }
+.prix { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; }
+.prix .barre { color: var(--muted); text-decoration: line-through; font-size: 18px; }
+.prix .net { font: 800 34px var(--display); color: var(--accent); }
+ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+.mono { font-family: var(--mono); font-size: 13px; background: var(--accent-soft); padding: 2px 7px; border-radius: 6px; }
+.contact { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+#langue { background: transparent; color: var(--accent); }
+button { font: 600 14px var(--body); border: 1px solid var(--accent); background: var(--accent); color: #fff; padding: 8px 14px; border-radius: 9px; cursor: pointer; }
+button:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; }
+footer { color: var(--muted); font-size: 13px; }
+@media (max-width: 680px) { .ecrans { grid-template-columns: minmax(0, 1fr); } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="marque">Rev<span>IA</span></div>
+    <h1>La revue de code par IA qui bloque les failles avant le merge</h1>
+    <p class="lead">RevIA relit le code comme un développeur senior : injections SQL et de commandes, secrets en dur, bugs et mauvaises pratiques, chacun rattaché au Top 10 OWASP avec une explication claire et une correction prête à appliquer. Il s'intègre à GitHub Actions et GitLab CI et peut tourner entièrement sur vos propres serveurs.</p>
+  </header>
+
+  <section>
+    <video controls preload="metadata" poster="poster.jpg" src="RevIA-demo.mp4"></video>
+    <p class="legende">Démo · 1 min 37 · essai sans compte, rapport, correction, tableau de bord, jeton CI et seuil qualité qui bloque une pull request.</p>
+  </section>
+
+  <section>
+    <h2>Écrans</h2>
+    <div class="ecrans">
+      <figure><img src="shots/essai.jpg" alt="Trial on the home page: Java code on the left, score 50 and three findings on the right" loading="lazy">
+        <figcaption><b>Essai immédiat.</b> Collez jusqu'à 150 lignes, rien n'est enregistré.</figcaption></figure>
+      <figure><img src="shots/rapport.jpg" alt="Review report with score ring and SARIF export button" loading="lazy">
+        <figcaption><b>Rapport.</b> Score sur 100, problèmes par gravité, export SARIF.</figcaption></figure>
+      <figure><img src="shots/tableau.jpg" alt="Dashboard with average score trend and issues by category" loading="lazy">
+        <figcaption><b>Tableau de bord.</b> Évolution de la qualité et erreurs les plus fréquentes.</figcaption></figure>
+      <figure><img src="shots/ci-token.jpg" alt="Settings page with a newly created CI token" loading="lazy">
+        <figcaption><b>Intégration CI.</b> Un jeton, un fichier de workflow, un seuil qualité sur chaque pull request.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="offre" aria-labelledby="offre-titre">
+    <h2 id="offre-titre">RevIA est disponible en l'état</h2>
+    <div class="prix"><span class="net">390 €</span><span>en une fois · licence du code source non exclusive (modification, hébergement, revente sous votre marque)</span></div>
+    <div class="prix"><span class="net">1 500 €</span><span>en une fois · cession exclusive de tous les droits, à un seul acquéreur</span></div>
+    <div class="ecrans">
+      <div><h3>Prêt</h3><ul>
+        <li>Analyse IA de Java, Python, JS/TS, PHP, C, C# : failles OWASP, secrets en dur, bugs, corrections</li>
+        <li>Spring Boot 3, Angular 17, PostgreSQL, comptes, quotas, administration, historique, tableau de bord</li>
+        <li>Seuil qualité GitHub Actions / GitLab CI, export SARIF, tout modèle d'IA ou Ollama local, Docker, documentation</li>
+      </ul></div>
+      <div><h3>Reste à faire par l'acquéreur</h3><ul>
+        <li>Le déploiement (serveur, domaine) et une clé d'IA payante</li>
+        <li>Le paiement en ligne, les conditions de vente, la politique de confidentialité</li>
+        <li>La traduction des écrans de l'application</li>
+      </ul></div>
+    </div>
+    <p class="legende">Vous recevez le code source complet (dépôt Git et documentation), livré en l'état.</p>
+  </section>
+
+  <section class="contact">
+    <span><span>Contact :</span> <span class="mono" id="mail">nafissa.briidah@gmail.com</span></span>
+    <button type="button" id="copier">Copier l'adresse</button>
+  </section>
+
+  <p class="legende"><a href="index.html">English version</a></p>
+  <footer>RevIA est présenté par Nafissa Bridah, ingénieure en génie logiciel et data, QA logicielle depuis 2 ans.</footer>
+</div>
+<script>
+document.getElementById('copier').addEventListener('click', () => {
+  const t = document.getElementById('mail').textContent, b = document.getElementById('copier');
+  navigator.clipboard.writeText(t).then(() => { b.textContent = 'Copied'; }, () => {
+    const r = document.createRange(); r.selectNodeContents(document.getElementById('mail'));
+    const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected, press Ctrl+C';
+  });
+});
+</script>
+
+</html>
